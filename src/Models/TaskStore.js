@@ -1,10 +1,5 @@
 import { types } from 'mobx-state-tree'
 
-export const Tag = types.model({
-    nome: types.string,
-    color: types.string
-})
-
 export const Task = types
     .model("Task", {
         key: types.identifier,
@@ -15,8 +10,7 @@ export const Task = types
         dataCriacao: types.string,
         dataPrevisao: types.string,
         dataConclusao: types.string,
-        tags: types.array(Tag),
-        opcoes: types.string
+        tags: types.array(types.string),
     })
     .actions(self => {
         return {
@@ -48,27 +42,7 @@ export const TaskStore = types
     })
     .actions(self => {
         return {
-            // getColor(){
-            //     switch (self.tags.nome) {
-            //         case 'Confidencialidade':
-            //           self.color = 'purple'
-            //           break
-            //         case 'Não concluído':
-            //           self.color = 'red'
-            //           break
-            //         case 'Trabalhista':
-            //           self.color = 'blue'
-            //           break
-            //         case 'Concluído':
-            //           self.color = 'green'
-            //           break
-            //         case 'Bancária':
-            //           self.color = 'gold'
-            //           break
-            //         default:
-            //           self.color = 'blue'
-            //       }
-            // }
+
         }
     })
 
